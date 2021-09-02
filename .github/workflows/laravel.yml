@@ -12,12 +12,6 @@ jobs:
       runs-on: ubuntu-latest
       
       steps:
-        - name: Configure AWS Credentials
-          uses: aws-actions/configure-aws-credentials@v1
-          with:
-           aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
-           aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
-           aws-region: us-east-2c
         - name: On-demand self-hosted AWS EC2 runner for GitHub Actions
         - uses: machulav/ec2-github-runner@v2
           with:
