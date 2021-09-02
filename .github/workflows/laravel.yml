@@ -6,32 +6,28 @@ on:
   pull_request:
     branches: [ main ]
     
-workflow-dispatch:
-
 jobs:
     deploy:
       name: Deploy
       runs-on: ubuntu-latest
       
       steps:
-        - uses: aws-actions/configure-aws-credentials@v1
+        - name: Configure AWS Credentials
+          uses: aws-actions/configure-aws-credentials@v1
           with:
-         # AWS Access Key ID. This input is required if running in the GitHub hosted environment. It is optional if running in a self-hosted environment that already has AWS credentials, for example on an EC2 instance.
            aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
-         # AWS Secret Access Key. This input is required if running in the GitHub hosted environment. It is optional if running in a self-hosted environment that already has AWS credentials, for example on an EC2 instance.
-          aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
-          aws-region: us-east-2c
+           aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
+           aws-region: us-east-2c
         - name: On-demand self-hosted AWS EC2 runner for GitHub Actions
         - uses: machulav/ec2-github-runner@v2
           with:
            mode: start
-            ec2-instance-type: t2.micro
-          subnet-id: subnet-cdd1e581
-          security-group-id: |
+           subnet-id: subnet-cdd1e581
+           security-group-id: |
                             sg-02c9fc79b6c4109d7
                             sg-08a5a9cb8c7918f25
                             sg-0763afb47f36d6fa7
-          ec2-instance-id: i-03d221ab975187baf
+           ec2-instance-id: i-03d221ab975187baf
         - uses: actions/checkout@v2
         - name: Changing directory
           run: cd /var/www
