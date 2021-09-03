@@ -84,7 +84,7 @@
                 <div class="title m-b-md">
                     <b>Welcome To </b>
                     <br>
-                    <b>CRUD Demo Product</b>
+                    <b>CRUD Demo Application Product</b>
                 </div>
 
                 <div class="links">
