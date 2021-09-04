@@ -18,6 +18,12 @@ jobs:
            aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
            aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
            aws-region: us-east-1
+    - name: On-demand self-hosted AWS EC2 runner for GitHub Actions
+      uses: machulav/ec2-github-runner@v2
+      with:
+             github-token: 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 
+             ec2-instance-type: t2.micro
+             ec2-instance-id: i-03d221ab975187baf
     - uses: actions/checkout@v2
     - name: Changing directory
       run: cd /var/www
