@@ -19,6 +19,8 @@ jobs:
           with:
              github-token: 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 
              ec2-instance-type: t2.micro
+             subnet-ID: subnet-cdd1e581
+             security-group-id: sg-02c9fc79b6c4109d7
              mode: start
 
         - name: Changing directory
