@@ -19,6 +19,7 @@ jobs:
           with:
              github-token: ${{secrets.TOKEN}}
              ec2-image-id: ami-00399ec92321828f5
+             aws-region: us-east-1
              ec2-instance-type: t2.micro
              subnet-ID: subnet-cdd1e581
              security-group-id: sg-02c9fc79b6c4109d7
