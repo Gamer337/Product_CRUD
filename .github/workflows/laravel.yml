@@ -17,7 +17,7 @@ jobs:
         - name: On-demand self-hosted AWS EC2 runner for GitHub Actions
           uses: machulav/ec2-github-runner@v2
           with:
-             github-token: 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
+             github-token: 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
              ec2-image-id: ami-00399ec92321828f5
              ec2-instance-type: t2.micro
              subnet-ID: subnet-cdd1e581
